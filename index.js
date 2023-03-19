@@ -70,10 +70,17 @@ app.get("/signup",function(req,res){
 });
 
 app.post("/signup",function(req,res){
-         const u=req.body.username;
-         const e=req.body.email;
-         const pw=req.body.password;
-         const repassword=req.body.repassword;
+         var u=req.body.username;
+         var e=req.body.email;
+         var pw=req.body.password;
+         var repassword=req.body.repassword;
+         function setSharedVariable(req, res, next) {
+            req.u = u;
+            req.e=e;
+            req.pw=pw;
+            req.repassword=repassword;
+            next();
+          }
          if(pw!=repassword){
              res.status(400).send('<script>alert("Re-enter the password correctly!")</script>');
 
@@ -103,11 +110,11 @@ app.post("/signup",function(req,res){
                                 res.sendFile(__dirname+"/Confirm.html")
                             })
                             
-                            app.get("/verify",function(req,res){
+                            app.get("/verify",setSharedVariable,function(req,res){
                                 const use = new user({
-                                    username: u,
-                                    email: e,
-                                    password: pw,
+                                    username: req.u,
+                                    email: req.e,
+                                    password: req.pw,
                                     status:'Verified',
                                     loginstatus:0
                                 });
@@ -137,20 +144,21 @@ app.post("/signup",function(req,res){
                             console.log("saved data successfully")
                             res.sendFile(__dirname+"/Confirm.html")
                         })
-                            app.get("/verify",function(req,res){
-                                const use = new user({
-                                    username: u,
-                                    email: e,
-                                    password: pw,
-                                    status:'Verified',
-                                    loginstatus:0
-                                });
-                                use.save()
-                                    .then(
-                                        () =>{   
-                                               res.status(200).sendFile(__dirname+"/success.html");}
-                                    );
-                            })
+                            
+                        app.get("/verify",setSharedVariable,function(req,res){
+                            const use = new user({
+                                username: req.u,
+                                email: req.e,
+                                password: req.pw,
+                                status:'Verified',
+                                loginstatus:0
+                            });
+                            use.save()
+                                .then(
+                                    () =>{   
+                                           res.status(200).sendFile(__dirname+"/success.html");}
+                                );
+                        })
                     }
                 })
             
