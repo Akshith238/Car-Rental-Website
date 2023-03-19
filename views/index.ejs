@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Royal Car Rental website</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon-32x32.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <script src="book.js"></script>
+  <script type="text/javascript" src="Scripts/jquery-2.1.1.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-lg-between">
+
+      <h1 class="logo me-auto me-lg-0"><a style="font-size: large;" href="/signedin?input=<%=usname%>"><img style="width:50px;height:80px;" src="assets/img/a0533dcc8ddfbbabf770d98213c14508-removebg-preview.png">Royal<span>Rentals</span></a></h1>
+
+      <nav id="navbar" class="navbar order-last order-lg-0">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#testimonials">About</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"><ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto" href="#testimonials">About</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+        </ul></i>
+      </nav><!-- .navbar -->
+      
+      <div class="dropdown">
+        <button class="btn get-started-btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <%= usname %>'s Profile
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="/profile?input=<%= usname %>">View Profile</a>
+          <a class="dropdown-item" href="/signout?input=<%= usname %>">Sign Out</a>
+        </div>
+      </div>
+
+    </div>
+  </header><!-- End Header -->
+  
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" style="background-image:url('assets/img/pngwing.com (3).png');" class="d-flex align-items-center justify-content-center">
+    <div class="container" data-aos="fade-up">
+       
+      <div class="row justify-content-center" data-aos="fade-up" data-aos-delay="150">
+        <div class="col-xl-6 col-lg-8">
+          
+          <h1>Powerfull And Comfy Cars For Rent<span>.</span></h1>
+          <h1>Book Your <span>Ride Now</span></h1>
+        </div>
+        
+      </div>
+
+    </div>
+  </section><!-- End Hero -->
+    <!--Carousel section-->
+    <div style="width: 100%;" id="Cars"  data-aos="fade-right" data-aos-delay="100" class="carousel slide col-lg-6" data-bs-ride="carousel">
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <img style="width:100%; height: 700px;" src="https://car-images.bauersecure.com/wp-images/153762/uruss_050.jpg" class="fixed-img slide w-100 d-block align-content-center" alt="Third slide">
+          <div class="carousel-caption " data-aos="fade-up" data-aos-delay="100">
+              <h1 id="car1">Lamborghini Urus</h1>
+              <p>20$/hr</p>
+              <a class="get-started-btn scrollto" role="button" href="/signin" onclick="autoFill('car1')">Rent</a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img style="width:100%; height: 700px;" src="https://images5.alphacoders.com/546/thumb-1920-546892.jpg" class="fixed-img slide w-100 d-block align-content-center" alt="Second slide">
+          <div class="carousel-caption " data-aos="fade-up" data-aos-delay="100">
+              <h1 id="car2">Range Rover </h1>
+              <p>15$/hr</p>
+              <a class="get-started-btn scrollto" role="button" href="/signin" onclick="autoFill('car2')">Rent</a>
+          </div>
+        </div>
+        <div class="carousel-item ">
+          <img style="width:100%; height: 700px;" src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&width=1200" class="fixed-img slide w-100 d-block align-content-center" alt="First slide">
+          <div class="carousel-caption " data-aos="fade-up" data-aos-delay="100">
+              <h1 id="car3">Forbes</h1>
+              <p>25$/hr</p>
+              <a class="get-started-btn scrollto" role="button" href="/signin" onclick="autoFill('car3')">Rent</a>
+          </div> 
+        </div>
+        <div class="carousel-item ">
+          <img style="width:100%; height: 700px;" src="https://images.unsplash.com/photo-1621953458116-523d72243cf3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80" class="fixed-img slide w-100 d-block align-content-center" alt="First slide">
+          <div class="carousel-caption " data-aos="fade-up" data-aos-delay="100">
+              <h1 id="car4">Ford Mustang</h1>
+              <p>15$/hr</p>
+              <a class="get-started-btn scrollto" role="button" href="/signin" onclick="autoFill('car4')">Rent</a>
+          </div> 
+        </div>
+        <div class="carousel-item ">
+          <img style="width:100%; height: 700px;" src="https://www.bentleymotors.com/content/dam/bentley/Master/homepage%20carousel/1920x1080_continental_GT_Speed_3.jpg/_jcr_content/renditions/original.image_file.1920.1080.file/1920x1080_continental_GT_Speed_3.jpg" class="fixed-img slide w-100 d-block align-content-center" alt="First slide">
+          <div class="carousel-caption" data-aos="fade-up" data-aos-delay="100">
+              <h1 id="car5">Bentlee Continental GT</h1>
+              <p>25$/hr</p>
+              <a class="get-started-btn scrollto" role="button" href="/signin"  onclick="autoFill('car5')">Rent</a>
+          </div> 
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#Cars" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#Cars" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+  
+  <main id="main">
+    
+
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-down">
+  
+        <div class="row">
+          <div class="container-card" data-aos="fade-left">
+            <div class="card1">
+               <img src="assets\img\peakpx (1).jpg" alt="">
+            </div>
+            <div class="card1">
+              <img src="assets\img\peakpx (2).jpg" alt="">
+           </div>
+           <div class="card1">
+               <img src="assets\img\peakpx (3).jpg" alt="">
+            </div>
+            <div class="card1">
+              <img src="assets\img\peakpx (4).jpg" alt="">
+            </div>
+           <div class="card1">
+            <img src="assets\img\peakpx (5).jpg" alt="">
+           </div>
+          </div>
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <div class="wrapper" style="margin-top:370px;">
+              <div class="outer">
+                <div class="card2" style="--delay:-1;">
+                  <div class="content">
+                    <img style="width: 400px;" src='assets\img\pngwing.com (2).png'>
+                  </div>
+                </div>
+                <div class="card2" style="--delay:0;">
+                  <div class="content" >
+                    <img style="width: 400px;" src="assets/img/2-2-aston-martin-free-download-png.png">
+                  </div>
+                </div>
+                <div class="card2" style="--delay:1;">
+                  <div class="content" style="background-image: url('');">
+                    <img style="width: 400px;" src='assets\img\pngwing.com (3).png'>
+                  </div>
+                </div>
+                <div class="card2" style="--delay:2;">
+                  <div class="content" style="background-image: url('');">
+                    <img style="width: 400px;" src='assets\img\car-png-39055.png'>
+                  </div>
+                </div>
+                <div class="card2" style="--delay:2;">
+                  <div class="content" style="background-image: url('');">
+                    <img style="width: 400px;" src='assets\img\4-2-chevrolet-png-picture.png'>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="form" class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content" data-aos="fade-right" data-aos-delay="100">
+            <h1 style="color:aliceblue;">Book Your Ride:</h1>
+            <div class="col-lg-8 mt-5 mt-lg-0">
+
+              <form action="/book?input=<%= usname %>" method="post">
+                <div class="row">
+
+                  <div style="margin-top:20px;" class="form-group mt-3">
+                    <label style="margin-top:10px;color:aliceblue;" for="carmodel">Car Model:</label>
+                    <input style="margin-top:10px;" list="luxury-car-models" class="form-control" name="carmodel" id="carmodel" placeholder="Car Model" required>
+                    <datalist id="luxury-car-models">
+                      <option value="Audi A8">
+                      <option value="BMW 7 Series">
+                      <option value="Jaguar XJ">
+                      <option value="Lexus LS">
+                      <option value="Mercedes-Benz S-Class">
+                      <option value="Porsche Panamera">
+                      <option value="Rolls-Royce Ghost">
+                      <option value="Tesla Model S">
+                    </datalist>
+                  </div>
+
+                  <div style="margin-top:10px;" class="form-group mt-3">
+                    <label style="color:aliceblue;" for="city">City:</label>
+                    <input style="margin-top:10px;" list="cities" class="form-control" name="city" id="city" placeholder="Enter City" required>
+                      <datalist id="cities">
+                        <option value="Delhi">
+                        <option value="Mumbai">
+                        <option value="Bangalore">
+                        <option value="Chennai">
+                        <option value="Kolkata">
+                        <option value="Hyderabad">
+                        <option value="Pune">
+                        <option value="Ahmedabad">
+                        <option value="Jaipur">
+                        <option value="Surat">
+                        <option value="Lucknow">
+                        <option value="Kanpur">
+                        <option value="Nagpur">
+                        <option value="Visakhapatnam">
+                        <option value="Bhopal">
+                        <option value="Patna">
+                        <option value="Vadodara">
+                        <option value="Ludhiana">
+                        <option value="Agra">
+                        <option value="Nashik">
+                        <option value="Rajkot">
+                        <option value="Meerut">
+                        <option value="Varanasi">
+                        <option value="Srinagar">
+                        <option value="Guwahati">
+                        <option value="Kota">
+                        <option value="Jodhpur">
+                        <option value="Thane">
+                        <option value="Bhubaneswar">
+                        <option value="Coimbatore">
+                        <option value="Amritsar">
+                        <option value="Raipur">
+                        <option value="Allahabad">
+                        <option value="Ranchi">
+                        <option value="Jabalpur">
+                        <option value="Gwalior">
+                        <option value="Vijayawada">
+                        <option value="Madurai">
+                        <option value="Warangal">
+                        <option value="Dhanbad">
+                        <option value="Gorakhpur">
+                        <option value="Chandigarh">
+                        <option value="Noida">
+                        <option value="Jamshedpur">
+                        <option value="Ghaziabad">
+                        <option value="Cuttack">
+                        <option value="Dehradun">
+                        <option value="Faridabad">
+                        <option value="Asansol">
+                        <option value="Siliguri">
+                        <option value="Jammu">
+                        <option value="Udaipur">
+                        <option value="Mangalore">
+                        <option value="Tiruchirappalli">
+                        <option value="Salem">
+                        <option value="Kochi">
+                        <option value="Kolhapur">
+                        <option value="Ajmer">
+                        <option value="Guntur">
+                        <option value="Tiruppur">
+                        <option value="Nellore">
+                        <option value="Jhansi">
+                        <option value="Bhilai">
+                        <option value="Sagar">
+                        <option value="Shimla">
+                        <option value="Durgapur">
+                        <option value="Aurangabad">
+                        <option value="Anantapur">
+                        <option value="Kakinada">
+                        <option value="Aligarh">
+                        <option value="Bikaner">
+                        <option value="Agartala">
+                        <option value="Moradabad">
+                        <option value="Bardhaman">
+                        <option value="Thanjavur">
+                        <option value="Nanded">
+                        <option value="Bokaro Steel City">
+                        <option value="Tumkur">
+                        <option value="Hisar">
+                        </datalist>
+
+                  </div>
+                  <div  class="form-group mt-3">
+                    <label style="color:aliceblue;" for="pickup">Pickup  location:</label>
+                    <input style="margin-top:10px;" type="text" class="form-control" name="pickup" id="pickup" placeholder="Enter pickup location" required>
+                  </div>
+                  <div class="form-group mt-3">
+                    <label style="color:aliceblue;" for="startdate">Start-date:</label>
+                    <input style="margin-top:10px;" type="date" class="form-control" name="startdate" id="startdate" placeholder="Start Date" required>
+                  </div>
+                  <label style="margin-top:10px;color:aliceblue;" for="enddate">End date:</label>
+                  <div class="form-group mt-3">
+                    <input type="date" class="form-control" name="enddate" id="enddate" placeholder="End Date" required>
+                  </div>
+                  <label style="margin-top:10px;color:aliceblue;" for="starttime">Start Time:</label>
+                  <div style="margin-top:10px;"class="col-md-6 form-group">
+                    <input style="width:100%;"type="time" name="starttime" class="form-control" id="starttime" placeholder="Your Pickup Location" required>
+                  </div>
+                  <label style="margin-top:10px;color:aliceblue;" for="endtime">End time:</label>
+                  <div class="col-md-6 form-group mt-3 mt-md-0">
+                    <input style="margin-top:10px;"type="time" class="form-control" name="endtime" id="endtime" placeholder="Your Email" required>
+                  </div>
+                </div>
+                <div class="text-center" style="margin-top:20px;"> <button class="btn btn-dark get-started-btn" type="submit">Book</button></div>
+              </form>
+            </div>
+             
+          </div>
+          
+        </div>
+        
+      </div>
+      
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Clients Section ======= -->
+    <section id="clients" class="clients">
+      <div class="container" data-aos="zoom-in">
+        <div class="clients-slider swiper">
+          <div class="swiper-wrapper align-items-center">
+            <div class="swiper-slide"><img src="assets/img/pngwing.com (1).png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/pngwing.com (4).png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/pngwing.com (5).png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/pngwing.com (6).png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/pngwing.com (7).png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/pngwing.com (10).png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/pngwing.com (8).png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="assets/img/pngwing.com.png" class="img-fluid" alt=""></div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Clients Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+      <div class="container" data-aos="fade-up">
+      
+        <div class="row">
+          <div class="image col-lg-6" style='background-image: url("assets/img/pngwing.com (9).png");' data-aos="fade-right"></div>
+          <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+            <div class="icon-box mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="150">
+              <i class="bx bx-receipt"></i>
+              <h4>Perfect quality</h4>
+              <p>Quality of the cars are maintained well and regularly</p>
+            </div>
+            <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+              <i class="bx bx-cube-alt"></i>
+              <h4>Reasonable price</h4>
+              <p>Ride of super cars at a price never thought of</p>
+            </div>
+            <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+              <i class="bx bx-images"></i>
+              <h4>Variety filled</h4>
+              <p>Nearly 1000 varieties of cars</p>
+            </div>
+            <div class="icon-box mt-5" data-aos="zoom-in" data-aos-delay="150">
+              <i class="bx bx-shield"></i>
+              <h4>At your Doorstep</h4>
+              <p>Cars are delivered even at your door step</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Services</h2>
+          <p>Check our Services</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bxl-dribbble"></i></div>
+              <h4>Fastest Delivery of Cars</h4>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-file"></i></div>
+              <h4>On-Road Service</h4>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="icon-box">
+              <div class="icon"><i class="bx bx-tachometer"></i></div>
+              <h4>Quality Assurance</h4>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+    
+
+  
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" style="background-image:url('pngwing.com (11).png')" class="testimonials">
+      <div class="container" data-aos="zoom-in">
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item active">
+                <img src="assets\img\288717788_276708177973854_3154310665472383731_n.jpg" class="testimonial-img" alt="">
+                <h3>Akshith</h3>
+                <h4>Ceo &amp; Founder</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                      We created this company for giving everbody a chance to drive super cars at a low cost.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets\img\WhatsApp Image 2023-03-18 at 9.54.52 PM.jpeg" class="testimonial-img" alt="">
+                <h3>Sri Nitin S</h3>
+                <h4>Manager & Co-Founder</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  We have a team of highly qualified and experienced professionals who work hard to deliver the best products and services.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+    <!-- ======= Team Section ======= -->
+    <section style="background-color: #151515;" id="team" class="team">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Team</h2>
+          <p>Check our Team</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="300">
+              <div class="member-img">
+                <img src="assets\img\288717788_276708177973854_3154310665472383731_n.jpg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Akshith</h4>
+                <span>CEO</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+            <div class="member" data-aos="fade-up" data-aos-delay="400">
+              <div class="member-img">
+                <img src="assets\img\WhatsApp Image 2023-03-18 at 9.54.52 PM.jpeg" class="img-fluid" alt="">
+                <div class="social">
+                  <a href=""><i class="bi bi-twitter"></i></a>
+                  <a href=""><i class="bi bi-facebook"></i></a>
+                  <a href=""><i class="bi bi-instagram"></i></a>
+                  <a href=""><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>Sri Nitin S</h4>
+                <span>Manager</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Team Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Contact Us</p>
+        </div>
+
+        <div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q=psg college of technology&t=k&z=10&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://2yu.co"></a><br><style>.mapouter{position:relative;text-align:right;height:100%;width:100%;}</style><a href="https://embedgooglemap.2yu.co/"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:100%;width:100%;}</style></div></div>
+
+        <div class="row mt-5">
+
+          <div class="col-lg-4">
+            <div style="background-color: #151515;" class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>PSG College of Technology,Peelamedu,Coimbatore</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>rentalsroyalcar@gmail.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+91 11223 34455</p>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="col-lg-8 mt-5 mt-lg-0">
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                </div>
+                <div class="col-md-6 form-group mt-3 mt-md-0">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                </div>
+              </div>
+              <div class="form-group mt-3">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+              </div>
+              <div class="form-group mt-3">
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-info">
+              <h3>Royal<span>Rental</span></h3>
+              <p>
+                PSG College of Technology,<br>
+                Peelamedu,Coimbatore.<br><br>
+                <strong>Phone:</strong> +91 11223 34455<br>
+                <strong>Email:</strong> rentalsroyalcar@gmail.com<br>
+              </p>
+              <div class="social-links mt-3">
+                <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+                <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Our Newsletter</h4>
+            <p>Subscribe to this for latest Updates</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Royal Rental</span></strong>. All Rights Reserved
+      </div>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="book.js"></script>
+  <script src="scripts.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script>
+    function autoFill(id) {
+        var title=document.getElementById(id).innerHTML; 
+        document.getElementById('carmodel').value= title;         
+     }
+      
+  </script>
+  <!-- Template Main JS File -->
+  <script src="index.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  
+
+</body>
+
+</html>
