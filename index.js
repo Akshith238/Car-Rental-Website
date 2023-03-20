@@ -19,7 +19,7 @@ let transporter = nodemailer.createTransport({
     secure: true,
     auth: {
         user: 'rentalsroyalcarak@gmail.com',
-        pass: 'piaozxeybmwmqzyr'
+        pass: 'nwrnkctmwcstlyne'
     }
 });
 
