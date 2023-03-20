@@ -70,17 +70,10 @@ app.get("/signup",function(req,res){
 });
 
 app.post("/signup",function(req,res){
-         var u=req.body.username;
-         var e=req.body.email;
-         var pw=req.body.password;
-         var repassword=req.body.repassword;
-         function setSharedVariable(req, res, next) {
-            req.u = u;
-            req.e=e;
-            req.pw=pw;
-            req.repassword=repassword;
-            next();
-          }
+         global.u=req.body.username;
+         global.e=req.body.email;
+         global.pw=req.body.password;
+         global.repw=req.body.repassword;
          if(pw!=repassword){
              res.status(400).send('<script>alert("Re-enter the password correctly!")</script>');
 
@@ -96,7 +89,7 @@ app.post("/signup",function(req,res){
                             fs.readFile('Newmessage.html', {encoding: 'utf-8'}, function (err, html) {
                                 let mailOptions = {
                                     from: 'rentalsroyalcar@gmail.com',
-                                    to: e,
+                                    to: global.e,
                                     subject: 'Royal Rental Email Confirmation',
                                     html: html
                                 };  
@@ -110,11 +103,11 @@ app.post("/signup",function(req,res){
                                 res.sendFile(__dirname+"/Confirm.html")
                             })
                             
-                            app.get("/verify",setSharedVariable,function(req,res){
+                            app.get("/verify",function(req,res){
                                 const use = new user({
-                                    username: req.u,
-                                    email: req.e,
-                                    password: req.pw,
+                                    username: global.u,
+                                    email: global.e,
+                                    password: global.pw,
                                     status:'Verified',
                                     loginstatus:0
                                 });
@@ -131,7 +124,7 @@ app.post("/signup",function(req,res){
                         fs.readFile('Newmessage.html', {encoding: 'utf-8'}, function (err, html) {
                             let mailOptions = {
                                 from: 'rentalsroyalcar@gmail.com',
-                                to: e,
+                                to: global.e,
                                 subject: 'Royal Rental Email Confirmation',
                                 html: html
                             };  
@@ -147,9 +140,9 @@ app.post("/signup",function(req,res){
                             
                         app.get("/verify",setSharedVariable,function(req,res){
                             const use = new user({
-                                username: req.u,
-                                email: req.e,
-                                password: req.pw,
+                                username: global.u,
+                                email: global.e,
+                                password: global.pw,
                                 status:'Verified',
                                 loginstatus:0
                             });
